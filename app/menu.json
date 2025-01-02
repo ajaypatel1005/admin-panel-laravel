@@ -1,0 +1,20 @@
+{
+    "admin": [
+        {
+            "name": "Dashboard",
+            "icon": "mdi mdi-monitor-dashboard",
+            "url": "/dashboard"
+        },
+        {
+            "name": "Tags",
+            "icon": "mdi mdi-card-account-mail",
+            "url": "/tags"
+        },
+        {
+            "name": "To Do List",
+            "icon": "mdi mdi-account-settings",
+            "url": "/to-do"
+        }
+    ]
+    
+}
