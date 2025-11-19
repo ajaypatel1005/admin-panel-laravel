@@ -1,0 +1,23 @@
+CREATE PROCEDURE SoftLogin(
+    IN username_p VARCHAR(150),
+    IN password_p VARCHAR(32)
+)
+BEGIN
+    DECLARE user_count INT DEFAULT 0;
+
+    SELECT COUNT(*) INTO user_count
+    FROM login
+    WHERE username = username_p
+      AND password = password_p;
+
+    IF user_count > 0 THEN
+        -- Return user record if login is valid
+        SELECT id, username,password
+        FROM login
+        WHERE username = username_p
+          AND password = password_p;
+    ELSE
+        -- Return an empty result or message
+        SELECT 'Invalid username or password' AS message;
+    END IF;
+END;
